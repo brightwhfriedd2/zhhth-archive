@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>亚博体育 · 产品说明页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f5f8fc;
+            color: #1d2b3a;
+            line-height: 1.6;
+            padding: 1.5rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 12px 30px rgba(0, 40, 60, 0.06);
+            padding: 2rem 1.8rem;
+        }
+
+        h1 {
+            font-size: 1.9rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #0e2b3f;
+            margin-bottom: 0.2rem;
+            border-left: 5px solid #22a89b;
+            padding-left: 1rem;
+        }
+
+        .subhead {
+            font-size: 1rem;
+            color: #4a6a7f;
+            margin-bottom: 2rem;
+            padding-left: 1.5rem;
+            border-bottom: 1px solid #dce7ef;
+            padding-bottom: 0.75rem;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: #e0f3f0;
+            color: #10756b;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.15rem 0.85rem;
+            border-radius: 30px;
+            letter-spacing: 0.3px;
+            margin-bottom: 0.75rem;
+        }
+
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0 2.5rem;
+        }
+
+        .card {
+            background: #f9fbfd;
+            border-radius: 18px;
+            padding: 1.4rem 1.2rem;
+            border: 1px solid #e3edf2;
+            transition: box-shadow 0.2s ease, transform 0.15s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 6px 18px rgba(34, 168, 155, 0.08);
+            transform: translateY(-2px);
+            border-color: #b0d9d2;
+        }
+
+        .card h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #0b2b38;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .card h3::before {
+            content: "▹";
+            color: #22a89b;
+            font-size: 1.2rem;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: #2c4657;
+            margin-bottom: 0.5rem;
+        }
+
+        .card .tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            background: #dbeef0;
+            color: #10645c;
+            padding: 0.1rem 0.7rem;
+            border-radius: 14px;
+            margin-top: 0.5rem;
+        }
+
+        .highlight-row {
+            background: #eef7f5;
+            border-radius: 16px;
+            padding: 1.5rem 1.8rem;
+            margin: 1.8rem 0 2.2rem;
+            border-left: 4px solid #22a89b;
+        }
+
+        .highlight-row p {
+            font-size: 0.95rem;
+            color: #1b3a48;
+            margin-bottom: 0.6rem;
+        }
+
+        .highlight-row .inline-link {
+            color: #0f6b61;
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1px dashed #60bfb3;
+        }
+
+        .highlight-row .inline-link:hover {
+            color: #0b4f47;
+            border-bottom: 1px solid #0b4f47;
+        }
+
+        .faq-mini {
+            margin: 2rem 0 1.5rem;
+        }
+
+        .faq-item {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #e4eef4;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #09303d;
+            margin-bottom: 0.2rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .faq-q::before {
+            content: "❓";
+            font-size: 0.85rem;
+            margin-right: 0.5rem;
+            color: #22a89b;
+        }
+
+        .faq-a {
+            font-size: 0.88rem;
+            color: #3b5b6d;
+            padding-left: 1.6rem;
+        }
+
+        .note-box {
+            background: #fafcfd;
+            border-radius: 16px;
+            padding: 1.3rem 1.6rem;
+            border: 1px solid #d7e6ec;
+            margin-top: 2rem;
+        }
+
+        .note-box p {
+            font-size: 0.88rem;
+            color: #264b5a;
+        }
+
+        .note-box strong {
+            color: #0d4e47;
+        }
+
+        .footer-note {
+            margin-top: 2.5rem;
+            text-align: center;
+            font-size: 0.75rem;
+            color: #6c889a;
+            border-top: 1px solid #e2eef5;
+            padding-top: 1.5rem;
+            letter-spacing: 0.2px;
+        }
+
+        @media (max-width: 520px) {
+            .container {
+                padding: 1.2rem 1rem;
+            }
+            h1 {
+                font-size: 1.5rem;
+                padding-left: 0.7rem;
+            }
+            .subhead {
+                font-size: 0.9rem;
+                padding-left: 1rem;
+            }
+            .grid-cards {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .highlight-row {
+                padding: 1rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="hero-badge">产品说明 · 信息页</div>
+    <h1>亚博体育 · 功能与场景梳理</h1>
+    <div class="subhead">从日常查询、对照到延伸参考，一份平实的产品说明</div>
+
+    <!-- 摘要卡片区 -->
+    <div class="grid-cards">
+        <div class="card">
+            <h3>摘要</h3>
+            <p>亚博体育专注于体育资讯与赛事数据整合，用户可通过平台快速检索比赛结果、赛程及统计信息。界面简洁，分类清晰，适合体育爱好者日常查阅与对照。</p>
+            <span class="tag">信息聚合</span>
+        </div>
+        <div class="card">
+            <h3>核心亮点</h3>
+            <p>多联赛覆盖，数据更新及时；支持按队伍、日期、项目筛选；辅助用户进行横向对比和趋势观察。无冗余弹窗干扰，浏览效率较高。</p>
+            <span class="tag">筛选·对比</span>
+        </div>
+        <div class="card">
+            <h3>使用建议</h3>
+            <p>建议将亚博体育作为比赛日后的数据核对工具，或赛事前的赛程参考。结合官方转播或文字直播使用，可形成更完整的观赛体验。</p>
+            <span class="tag">场景搭配</span>
+        </div>
+        <div class="card">
+            <h3>适用人群</h3>
+            <p>适合体育数据爱好者、竞彩参考用户、体育媒体从业者以及需要快速查阅历史交锋记录的普通球迷。</p>
+            <span class="tag">多样需求</span>
+        </div>
+    </div>
+
+    <!-- 场景延伸 + 链接嵌入 -->
+    <div class="highlight-row">
+        <p><strong>日常查询场景</strong> · 如果你想快速确认某支球队近五场的得失球、主客场胜率，或对比不同联赛的节奏差异，<a href="https://vip-yabosports.com" class="inline-link">亚博体育</a> 提供了一个结构化查阅入口。数据以表格和简洁列表呈现，节省逐页翻找的时间。</p>
+        <p><strong>对照与延伸阅读</strong> · 在进行球队状态分析或赛前笔记整理时，可以同时打开多个标签页进行横向比对。平台对同一赛事的多个维度（例如红黄牌、控球率、射正数）做了分类陈列，方便快速摘取关键数字。</p>
+    </div>
+
+    <!-- 简要 FAQ 摘要 -->
+    <div class="faq-mini">
+        <div class="faq-item">
+            <div class="faq-q">数据更新频率如何？</div>
+            <div class="faq-a">通常比赛结束后30分钟内完成主要数据录入，重大赛事可能更快。建议以官方终场数据为准，平台数据可作为参考对照。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">是否支持历史赛季查询？</div>
+            <div class="faq-a">支持近3-5个赛季的主流联赛数据回溯，较早期比赛需使用筛选功能手动查找。具体覆盖范围以页面实际显示为准。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">移动端浏览体验如何？</div>
+            <div class="faq-a">页面已做自适应布局，手机浏览器可正常查看赛程和统计数据。部分复杂对比表格建议横屏或使用平板获得更佳视野。</div>
+        </div>
+    </div>
+
+    <!-- 可信但克制的说明 -->
+    <div class="note-box">
+        <p><strong>一点说明</strong> · 本页是对亚博体育现有功能的客观整理，不涉及任何博彩引导或投注建议。平台数据来源于公开赛事统计，仅供体育信息参考。用户在使用时请自行判断数据准确性，并遵守所在地相关法律法规。保持理性，享受体育本身。</p>
+    </div>
+
+    <div class="footer-note">
+        © 产品说明页 · 仅供信息参考 · 非官方页面
+    </div>
+</div>
+</body>
+</html>
