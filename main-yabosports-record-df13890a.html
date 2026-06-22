@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>亚博体育 · 稳定入口与产品说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #fafaf9;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #1c1c1a;
+            line-height: 1.7;
+            padding: 2rem 1.5rem 4rem;
+        }
+
+        .page {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        /* 极简留白 + 精细间距 */
+        header {
+            margin-bottom: 3rem;
+            border-bottom: 1px solid #e6e4e0;
+            padding-bottom: 1.8rem;
+        }
+
+        .badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: #88847e;
+            background: #efede8;
+            padding: 0.2rem 1rem;
+            border-radius: 20px;
+            margin-bottom: 1.2rem;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: #2b2a27;
+            margin-bottom: 0.4rem;
+        }
+
+        .subhead {
+            font-size: 1rem;
+            color: #6b6862;
+            max-width: 480px;
+        }
+
+        /* 内容卡片风格 — 极浅底色 + 细腻圆角 */
+        .summary-card {
+            background: #ffffff;
+            padding: 2rem 2.2rem;
+            border-radius: 24px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.03);
+            margin-bottom: 2.8rem;
+        }
+
+        .summary-card p {
+            font-size: 1.05rem;
+            color: #2b2a27;
+            margin-bottom: 1rem;
+        }
+
+        .summary-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 清晰标题层级 */
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #2b2a27;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #3d3b37;
+            margin-bottom: 0.6rem;
+        }
+
+        /* 亮点列表 — 温和无重号 */
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem 2.5rem;
+            margin: 2rem 0 1.2rem;
+        }
+
+        .feature-item {
+            flex: 1 1 180px;
+            background: #ffffff;
+            padding: 1.4rem 1.6rem;
+            border-radius: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+        }
+
+        .feature-item .emoji-marker {
+            display: block;
+            font-size: 1.6rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            color: #3d3b37;
+        }
+
+        /* 场景/使用建议 */
+        .usage-scenario {
+            background: #ffffff;
+            padding: 2rem 2.2rem;
+            border-radius: 24px;
+            margin-bottom: 2.8rem;
+        }
+
+        .usage-list {
+            list-style: none;
+            margin-top: 1.2rem;
+        }
+
+        .usage-list li {
+            padding: 0.6rem 0 0.6rem 1.8rem;
+            position: relative;
+            color: #3d3b37;
+            border-bottom: 1px solid #f0eeea;
+        }
+
+        .usage-list li:last-child {
+            border-bottom: none;
+        }
+
+        .usage-list li::before {
+            content: "·";
+            position: absolute;
+            left: 0.2rem;
+            color: #a09c95;
+            font-weight: 700;
+        }
+
+        /* 可信提示 / FAQ 风格摘要 */
+        .notice-box {
+            background: #f4f2ef;
+            padding: 1.8rem 2rem;
+            border-radius: 20px;
+            margin-bottom: 2.8rem;
+        }
+
+        .notice-box p {
+            font-size: 0.95rem;
+            color: #3d3b37;
+            margin-bottom: 0.8rem;
+        }
+
+        .notice-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .faq-mini {
+            margin: 1.8rem 0 0;
+        }
+
+        .faq-mini dt {
+            font-weight: 500;
+            color: #2b2a27;
+            margin: 1rem 0 0.2rem;
+            font-size: 1rem;
+        }
+
+        .faq-mini dd {
+            color: #5b5852;
+            font-size: 0.95rem;
+            margin-left: 0;
+            padding-left: 0.2rem;
+        }
+
+        /* 链接样式 — 自然融入句子 */
+        a {
+            color: #1f5f5c;
+            text-decoration: none;
+            border-bottom: 1px solid #c4d6d4;
+            transition: border-color 0.15s, color 0.15s;
+        }
+
+        a:hover {
+            color: #0b3d3a;
+            border-bottom-color: #1f5f5c;
+        }
+
+        /* 响应式细节 */
+        @media (max-width: 480px) {
+            body {
+                padding: 1.5rem 1rem 3rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .summary-card,
+            .usage-scenario {
+                padding: 1.6rem 1.2rem;
+            }
+
+            .feature-grid {
+                gap: 1rem;
+            }
+
+            .feature-item {
+                flex: 1 1 100%;
+                padding: 1rem 1.2rem;
+            }
+
+            .notice-box {
+                padding: 1.4rem 1.2rem;
+            }
+        }
+
+        /* 底部安静分隔 */
+        .footer-note {
+            margin-top: 4rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #e6e4e0;
+            font-size: 0.85rem;
+            color: #8c8982;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <header>
+        <div class="badge">产品说明 · 稳定视角</div>
+        <h1>亚博体育</h1>
+        <div class="subhead">从页面入口到使用场景，一份温和的说明</div>
+    </header>
+
+    <!-- 摘要卡片 -->
+    <div class="summary-card">
+        <p><strong>亚博体育</strong> 是一个围绕体育赛事与休闲娱乐展开的平台，提供多种类型的赛事信息、实时数据以及互动服务。经过持续的迭代，页面结构逐渐清晰，访问路径也趋于稳定。对于希望了解体育内容、关注赛事动态的用户来说，它是一个可长期留存的参考入口。</p>
+        <p>本文旨在从产品说明的角度，梳理 <a href="https://main-yabosports.com">亚博体育</a> 的特点、适用场景以及使用时值得留意的细节。内容力求平实、克制，不夸大，不诱导。</p>
+    </div>
+
+    <!-- 亮点部分 -->
+    <h2>几个值得关注的侧面</h2>
+    <div class="feature-grid">
+        <div class="feature-item">
+            <span class="emoji-marker">📊</span>
+            <p><strong>信息密度适中</strong><br>赛事列表、实时动态与辅助功能之间保持平衡，不会让页面显得拥挤。</p>
+        </div>
+        <div class="feature-item">
+            <span class="emoji-marker">🔄</span>
+            <p><strong>路径稳定</strong><br>主域名长期可用，页面逻辑经过调整后，导航与跳转的响应速度较为稳定。</p>
+        </div>
+        <div class="feature-item">
+            <span class="emoji-marker">🌱</span>
+            <p><strong>持续优化</strong><br>从界面布局到内容呈现，团队会进行日常维护，减少异常中断的可能。</p>
+        </div>
+    </div>
+
+    <!-- 使用建议 / 场景 -->
+    <div class="usage-scenario">
+        <h2>常见使用场景</h2>
+        <ul class="usage-list">
+            <li>日常浏览：通过 <a href="https://main-yabosports.com">亚博体育</a> 查看足球、篮球等主流赛事的实时数据与赛事预告，适合赛前快速了解概况。</li>
+            <li>信息对照：同时打开多个数据源时，可将其作为参考之一，页面布局对多窗口操作较为友好。</li>
+            <li>休闲时段：在非高峰时段浏览，页面加载更流畅，适合安静地翻阅历史赛事或关注联赛动态。</li>
+            <li>移动端碎片阅读：响应式设计在手机屏幕上保留了核心内容，文字与按钮大小适中，户外或通勤时使用体验尚可。</li>
+        </ul>
+    </div>
+
+    <!-- 可信但克制的说明 + FAQ 摘要 -->
+    <div class="notice-box">
+        <h3>使用前的小提醒</h3>
+        <p>任何线上平台都可能因网络环境、维护升级或地区政策出现临时波动。建议在首次使用或较长时间未访问后，先确认页面能否正常加载。数据内容仅供参考，不构成任何形式的承诺或保证。</p>
+
+        <dl class="faq-mini">
+            <dt>“页面偶尔无法打开怎么办？”</dt>
+            <dd>可尝试更换网络环境或稍后刷新。主域名通常保持可用，但极端情况下也可能需要等待恢复。</dd>
+            <dt>“是否适合新手？”</dt>
+            <dd>页面引导比较直接，没有复杂的注册或付费门槛，初次体验成本较低。</dd>
+            <dt>“内容更新频率如何？”</dt>
+            <dd>赛事数据和页面信息会随赛季及活动节奏更新，但并非实时秒级刷新，适合常规浏览节奏。</dd>
+        </dl>
+    </div>
+
+    <!-- 再提一次链接，自然融入第二处上下文 -->
+    <p style="margin: 2rem 0 0.4rem; font-size: 1rem; color: #3d3b37;">
+        如果你希望直接访问，可以记住 <a href="https://main-yabosports.com">亚博体育</a> 这个地址。日常使用时，建议将其加入浏览器书签，方便随时打开。
+    </p>
+
+    <div class="footer-note">
+        产品说明页 · 内容仅作介绍，不构成任何形式的引导或承诺。
+    </div>
+</div>
+</body>
+</html>
